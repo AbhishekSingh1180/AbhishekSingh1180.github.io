@@ -1,233 +1,145 @@
-/* Reset and base styles */
-* {
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #f4f4f4;
-}
-
-/* Header */
 header {
   background-color: #000;
-  padding: 15px 0;
-  text-align: center;
+  color: white;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
 }
 
-header .logo {
-  font-size: 28px;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
   font-weight: bold;
-  color: white;
+  font-size: 1.5rem;
 }
 
 nav ul {
-  list-style-type: none;
-  padding: 10px 0;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 12px;
-}
-
-nav ul li a {
+nav a {
   color: white;
-  font-size: 16px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ff8c00;
-}
-
-/* Toggle */
-#mode-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Section layout */
-.section-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section-container p,
-.section-container li {
-  font-size: 1.05rem;
-}
-
-/* Contact card */
-.contact-card {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.contact-item {
-  margin: 10px 0;
-  font-size: 1rem;
-  width: 48%;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.contact-item a {
-  color: #333;
   text-decoration: none;
   font-weight: 500;
 }
 
-.contact-item a:hover {
-  color: #ff8c00;
-}
-
-/* About, Resume, Certificates, Projects */
-.card,
-.project-card,
-.certification-card {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-}
-
-.project-card:hover,
-.certification-card:hover {
-  transform: translateY(-2px);
-  transition: transform 0.2s ease;
-}
-
-/* Resume */
-.resume-container embed {
-  width: 100%;
-  height: 600px;
+#mode-toggle {
+  background: white;
+  color: black;
   border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.download-button {
-  display: inline-block;
-  background-color: #000;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-size: 1.1rem;
+.section-container {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
-  margin-top: 15px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.download-button:hover {
-  background-color: #ff8c00;
-  transform: scale(1.05);
+ul {
+  padding-left: 1.5rem;
 }
 
-/* Skills */
 .skill-category {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1rem;
 }
 
 .skill {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-.skill i {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.skill-stars {
-  margin-top: 5px;
-  color: #FFD700;
-  font-size: 1.2rem;
-}
-
-/* Contact Form */
-form {
-  margin-top: 20px;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
 }
 
-form button {
-  padding: 12px 25px;
-  background-color: #28a745;
+.accordion-toggle {
+  background: #007acc;
   color: white;
-  border: none;
-  border-radius: 6px;
+  padding: 0.7rem 1rem;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
-form button:hover {
-  background-color: #218838;
-}
-
-/* GitHub Contributions */
-#github-contributions img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* Accordion (if needed for projects) */
 .accordion-content {
   display: none;
 }
 
-.accordion-content.active {
-  display: block;
+.github-section {
+  padding: 4rem 2rem;
+  background-color: #f0f0f5;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+}
+
+.dark-mode nav a {
+  color: #fff;
+}
+
+.dark-mode .accordion-toggle {
+  background: #444;
+}
+
+.dark-mode form input, 
+.dark-mode form textarea {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #555;
 }

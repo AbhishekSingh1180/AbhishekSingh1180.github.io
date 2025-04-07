@@ -1,36 +1,18 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const modeToggle = document.getElementById("mode-toggle");
+  const body = document.body;
 
-// Toggle dark/light mode
-const toggleButton = document.getElementById("mode-toggle");
-toggleButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  toggleButton.textContent =
-    document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-});
-
-// Smooth scroll to section on nav click
-document.querySelectorAll("nav ul li a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+  modeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    modeToggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
   });
-});
 
-// Accordion toggle for projects
-const accordionToggle = document.querySelector(".accordion-toggle");
-if (accordionToggle) {
-  accordionToggle.addEventListener("click", () => {
-    const content = document.querySelector(".accordion-content");
-    content.classList.toggle("active");
+  const toggleBtn = document.querySelector(".accordion-toggle");
+  const projectContent = document.querySelector(".accordion-content");
+
+  toggleBtn.addEventListener("click", () => {
+    const isVisible = projectContent.style.display === "block";
+    projectContent.style.display = isVisible ? "none" : "block";
+    toggleBtn.textContent = isVisible ? "View Projects" : "Hide Projects";
   });
-}
-
-// Contact form submission alert
-document.getElementById("contact-form")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Message sent! Thank you for reaching out.");
-  e.target.reset();
 });
