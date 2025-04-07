@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,19 +9,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <script src="script.js" defer></script>
 </head>
-
 <body>
   <header>
     <div class="header-container">
       <div class="logo">Abhishek Singh</div>
-      <button id="mode-toggle">🌙</button>
       <nav>
         <ul>
           <li><a href="#contact-info"><i class="fas fa-id-badge"></i> Info</a></li>
           <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
           <li><a href="#career"><i class="fas fa-briefcase"></i> Career</a></li>
           <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
-          <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+          <li><a href="#certificates"><i class="fas fa-award"></i> Certificates</a></li>
           <li><a href="#projects"><i class="fas fa-cogs"></i> Projects</a></li>
           <li><a href="#skills"><i class="fas fa-star"></i> Skills</a></li>
           <li><a href="#github"><i class="fab fa-github"></i> GitHub</a></li>
@@ -32,119 +29,109 @@
     </div>
   </header>
 
-  <section id="contact-info" class="section-container">
-    <h2><i class="fas fa-address-card"></i> Contact Info</h2>
-    <div class="card">
-      <p><i class="fas fa-phone"></i> Phone: +91 12345 67890</p>
-      <p><i class="fas fa-envelope"></i> Email: your.email@example.com</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/AbhishekSingh1180" target="_blank">GitHub</a></p>
-      <p><i class="fas fa-code"></i> <a href="https://leetcode.com/u/V-O-I-D/" target="_blank">LeetCode</a></p>
-    </div>
-  </section>
+  <main>
+    <section id="contact-info" class="section-box">
+      <h2><i class="fas fa-address-card"></i> Contact Info</h2>
+      <div class="card">
+        <p><i class="fas fa-phone"></i> Phone: +91 12345 67890</p>
+        <p><i class="fas fa-envelope"></i> Email: your.email@example.com</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/AbhishekSingh1180" target="_blank">GitHub</a></p>
+        <p><i class="fas fa-code"></i> <a href="https://leetcode.com/u/V-O-I-D/" target="_blank">LeetCode</a></p>
+      </div>
+    </section>
 
-  <section id="about" class="section-container">
-    <h2><i class="fas fa-user"></i> About Me</h2>
-    <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python, with a strong background in Data Warehousing. Skilled in Google Cloud Platform and AWS. Currently working at Eli Lilly & Company, focused on data engineering in the healthcare domain.</p>
-  </section>
+    <section id="about" class="section-box">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python. Skilled in Google Cloud and AWS, working at Eli Lilly & Company in the healthcare data domain.</p>
+    </section>
 
-  <section id="career" class="section-container">
-    <h2><i class="fas fa-briefcase"></i> Career</h2>
-    <div class="timeline">
+    <section id="career" class="section-box">
+      <h2><i class="fas fa-briefcase"></i> Career</h2>
       <div class="card">
         <h3>Eli Lilly and Company</h3>
         <p><strong>Engineer II – Data Engineering</strong></p>
-        <p>Bengaluru, Karnataka, India (Hybrid)</p>
-        <p>Jan 2024 - Present · 1 yr 4 mos</p>
         <ul>
-          <li>Worked on Airflow, DBT, AWS, Docker, and GitHub actions in the modular drug discovery domain.</li>
-          <li>Managed data related to compounds, In-vitro, and In-vivo research data.</li>
+          <li>Worked on Airflow, DBT, AWS, Docker, GitHub actions.</li>
+          <li>Managed modular drug discovery data (compounds, In-vitro, In-vivo).</li>
         </ul>
       </div>
       <div class="card">
         <h3>DataGrokr</h3>
         <p><strong>Data Engineer</strong></p>
-        <p>Bengaluru, Karnataka, India (Hybrid)</p>
-        <p>Dec 2021 - Dec 2023 · 2 yrs 1 mo</p>
         <ul>
-          <li>Successfully migrated 3 years' worth of historical data for a US grocery chain to Snowflake using SnowSQL and Pandas.</li>
-          <li>Optimized financial data pipelines, saving $100k.</li>
+          <li>Migrated grocery data to Snowflake using SnowSQL and Pandas.</li>
+          <li>Optimized data pipelines, saving $100k.</li>
           <li>Built pipelines in GCP with Dataflow, Composer, BigQuery.</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="resume" class="section-container">
-    <h2><i class="fas fa-file-alt"></i> Resume</h2>
-    <div class="card">
-      <embed src="resume.pdf" width="100%" height="500px" />
-      <a href="resume.pdf" download class="button"><i class="fas fa-download"></i> Download Resume</a>
-    </div>
-  </section>
-
-  <section id="certificates" class="section-container">
-    <h2><i class="fas fa-award"></i> Certificates</h2>
-    <div class="card">
-      <ul>
-        <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Professional Data Engineer</a></li>
-        <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></li>
-        <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects" class="section-container">
-    <h2><i class="fas fa-cogs"></i> Projects</h2>
-    <div class="accordion-toggle">View Projects</div>
-    <div class="accordion-content">
+    <section id="resume" class="section-box">
+      <h2><i class="fas fa-file-alt"></i> Resume</h2>
       <div class="card">
-        <h3>Weather Forecast Pipeline - Snowflake</h3>
-        <p>Built a pipeline to forecast weather data and store it in Snowflake for real-time querying and analysis.</p>
-        <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        <embed src="resume.pdf" width="100%" height="500px" />
+        <a href="resume.pdf" class="btn-download" download><i class="fas fa-download"></i> Download Resume</a>
+      </div>
+    </section>
+
+    <section id="certificates" class="section-box">
+      <h2><i class="fas fa-award"></i> Certificates</h2>
+      <div class="card">
+        <ul>
+          <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Data Engineer</a></li>
+          <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></li>
+          <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section-box">
+      <h2><i class="fas fa-cogs"></i> Projects</h2>
+      <div class="card">
+        <h3>Weather Forecast Pipeline</h3>
+        <p>Built real-time weather forecasting pipeline with Snowflake.</p>
+        <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
       <div class="card">
-        <h3>Snowflake BigQuery Data Migration</h3>
-        <p>Migrated data from Snowflake to BigQuery for improved data analytics and operational efficiency.</p>
-        <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        <h3>Snowflake to BigQuery Migration</h3>
+        <p>Migrated data for analytics efficiency.</p>
+        <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
       <div class="card">
         <h3>FakerAPI ELT Pipeline</h3>
-        <p>Built an ELT pipeline using Faker API to simulate and transform large datasets for data testing.</p>
-        <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        <p>Simulated and transformed datasets for data testing.</p>
+        <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
+    </section>
+
+    <section id="skills" class="section-box">
+      <h2><i class="fas fa-star"></i> Skills</h2>
+      <div class="skills-stars">
+        <p>AWS: ⭐⭐⭐⭐☆</p>
+        <p>SQL: ⭐⭐⭐⭐⭐</p>
+        <p>Snowflake: ⭐⭐⭐⭐☆</p>
+        <p>Python: ⭐⭐⭐⭐☆</p>
+        <p>DBT: ⭐⭐⭐⭐☆</p>
+      </div>
+    </section>
+
+    <section id="github" class="section-box">
+      <h2><i class="fab fa-github"></i> GitHub Contributions</h2>
       <div class="card">
-        <h3>Sensex Data Analysis</h3>
-        <p>Performed advanced data analysis on Sensex data to predict trends and provide valuable insights.</p>
-        <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        <img src="https://ghchart.rshah.org/AbhishekSingh1180" alt="GitHub chart" />
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills" class="section-container">
-    <h2><i class="fas fa-laptop-code"></i> Skills</h2>
-    <div class="skill-category">
-      <div class="skill"><span>AWS</span> <span>⭐⭐⭐⭐☆</span></div>
-      <div class="skill"><span>SQL</span> <span>⭐⭐⭐⭐⭐</span></div>
-      <div class="skill"><span>Snowflake</span> <span>⭐⭐⭐⭐☆</span></div>
-      <div class="skill"><span>Python</span> <span>⭐⭐⭐⭐☆</span></div>
-      <div class="skill"><span>DBT</span> <span>⭐⭐⭐⭐☆</span></div>
-    </div>
-  </section>
-
-  <section id="github" class="github-section">
-    <h2>📈 GitHub Contributions</h2>
-    <img src="https://ghchart.rshah.org/AbhishekSingh1180" alt="GitHub chart" style="width:100%; border-radius:8px;" />
-  </section>
-
-  <section id="contact" class="section-container">
-    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-    </form>
-  </section>
+    <section id="contact" class="section-box">
+      <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>

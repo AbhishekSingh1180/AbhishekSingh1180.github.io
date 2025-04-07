@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const modeToggle = document.getElementById("mode-toggle");
-  const body = document.body;
-
-  modeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    modeToggle.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
+});
 
-  const toggleBtn = document.querySelector(".accordion-toggle");
-  const projectContent = document.querySelector(".accordion-content");
-
-  toggleBtn.addEventListener("click", () => {
-    const isVisible = projectContent.style.display === "block";
-    projectContent.style.display = isVisible ? "none" : "block";
-    toggleBtn.textContent = isVisible ? "View Projects" : "Hide Projects";
-  });
+// Contact form submission (placeholder)
+document.getElementById("contact-form").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Thank you for reaching out! I’ll get back to you soon.");
 });

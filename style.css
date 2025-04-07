@@ -1,145 +1,79 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #fff;
+  background: #f9f9f9;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-  background-color: #000;
+  background: #000;
   color: white;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 10px 0;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+  padding: 0 20px;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-}
-
-#mode-toggle {
-  background: white;
-  color: black;
-  border: none;
+  padding: 6px 12px;
+  transition: all 0.3s;
   border-radius: 6px;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  font-weight: bold;
 }
 
-.section-container {
-  padding: 4rem 2rem;
-  border-bottom: 1px solid #eee;
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.section-box {
+  padding: 60px 20px;
+  margin: 30px auto;
+  max-width: 1000px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
   font-size: 1.8rem;
 }
 
 .card {
-  background: #f9f9f9;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
-.skill-category {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.skill {
+  padding: 20px;
+  margin-bottom: 20px;
   background: #f0f0f0;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
-.accordion-toggle {
-  background: #007acc;
-  color: white;
-  padding: 0.7rem 1rem;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+.btn-download {
   display: inline-block;
-}
-
-.accordion-content {
-  display: none;
-}
-
-.github-section {
-  padding: 4rem 2rem;
-  background-color: #f0f0f5;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  background: #007acc;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #0077ff;
   color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #eee;
+.btn-download:hover {
+  background: #005fd4;
 }
 
-.dark-mode .card {
-  background-color: #1e1e1e;
-}
-
-.dark-mode nav a {
-  color: #fff;
-}
-
-.dark-mode .accordion-toggle {
-  background: #444;
-}
-
-.dark-mode form input, 
-.dark-mode form textarea {
-  background-color: #222;
-  color: #eee;
-  border: 1px solid #555;
+.skills-stars p {
+  margin: 6px 0;
+  font-size: 1.1rem;
 }
