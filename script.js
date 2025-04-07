@@ -1,11 +1,22 @@
-// script.js
+/* script.js */
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section-box");
+  const options = {
+    threshold: 0.1
+  };
 
-// Simple success feedback for contact form (can be enhanced with real backend later)
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Message submitted successfully!");
-    form.reset();
+  const revealOnScroll = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(revealOnScroll, options);
+  sections.forEach(section => {
+    section.classList.add("hidden");
+    observer.observe(section);
   });
 });
