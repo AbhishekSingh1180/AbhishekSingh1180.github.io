@@ -6,7 +6,6 @@
   <title>Abhishek Singh - Data Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Add Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,25 +14,25 @@
     <div class="logo">Abhishek Singh</div>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#career">Career</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#career"><i class="fas fa-briefcase"></i> Career</a></li>
+        <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
+        <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+        <li><a href="#projects"><i class="fas fa-cogs"></i> Projects</a></li>
+        <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="section-container">
     <h2>About Me</h2>
     <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python, with a strong background in Data Warehousing. Skilled in Google Cloud Platform and AWS. Currently working at Eli Lilly & Company, focused on data engineering in the healthcare domain.</p>
   </section>
 
   <!-- Career Section -->
-  <section id="career">
+  <section id="career" class="section-container career-container">
     <h2>Career</h2>
     <div class="timeline">
       <div class="card">
@@ -61,83 +60,68 @@
   </section>
 
   <!-- Resume Section -->
-  <section id="resume">
+  <section id="resume" class="section-container resume-container">
     <h2>Resume</h2>
     <embed src="resume.pdf" width="100%" height="600px" />
     <a href="resume.pdf" download class="button">Download Resume</a>
   </section>
 
   <!-- Certificates Section -->
-  <section id="certificates">
+  <section id="certificates" class="section-container">
     <h2>Certificates</h2>
     <ul>
-      <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Professional Data Engineer</a></li>
-      <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></li>
-      <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></li>
+      <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank"><i class="fas fa-award"></i> Google Cloud Certified - Professional Data Engineer</a></li>
+      <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank"><i class="fas fa-award"></i> Snowflake Certified Data Engineer</a></li>
+      <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank"><i class="fas fa-award"></i> HackerRank SQL Certification</a></li>
     </ul>
   </section>
 
   <!-- GitHub Contributions Section -->
-  <section id="github-contributions">
-    <h2>GitHub Contributions by Year</h2>
-    <div id="contribution-calendar"></div>
+  <section id="github-contributions" class="section-container">
+    <h2>GitHub Contributions</h2>
+    <img id="github-contribution-image" src="" alt="GitHub Contributions">
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" class="section-container">
     <h2>Projects</h2>
     <div class="project">
       <h3>Weather Forecast Pipeline - Snowflake</h3>
       <p>Built a pipeline to forecast weather data and store it in Snowflake for real-time querying and analysis.</p>
-      <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank">View on GitHub</a>
+      <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
     </div>
     <div class="project">
       <h3>Snowflake BigQuery Data Migration</h3>
       <p>Migrated data from Snowflake to BigQuery for improved data analytics and operational efficiency.</p>
-      <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank">View on GitHub</a>
+      <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
     </div>
     <div class="project">
       <h3>FakerAPI ELT Pipeline</h3>
       <p>Built an ELT pipeline using Faker API to simulate and transform large datasets for data testing.</p>
-      <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank">View on GitHub</a>
+      <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
     </div>
     <div class="project">
       <h3>Sensex Data Analysis</h3>
       <p>Performed advanced data analysis on Sensex data to predict trends and provide valuable insights.</p>
-      <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank">View on GitHub</a>
+      <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" class="section-container">
     <h2>Skills</h2>
     <div class="skill-category">
       <h3>Top Skills</h3>
-      <div class="skill">
-        <i class="fab fa-aws"></i><span>AWS</span>
-        <span class="rating">★★★★☆</span>
-      </div>
-      <div class="skill">
-        <i class="fab fa-code"></i><span>SQL</span>
-        <span class="rating">★★★★☆</span>
-      </div>
-      <div class="skill">
-        <i class="fas fa-snowflake"></i><span>Snowflake</span>
-        <span class="rating">★★★★☆</span>
-      </div>
-      <div class="skill">
-        <i class="fab fa-python"></i><span>Python</span>
-        <span class="rating">★★★★☆</span>
-      </div>
-      <div class="skill">
-        <i class="fas fa-database"></i><span>DBT (Data Build Tool)</span>
-        <span class="rating">★★★★☆</span>
-      </div>
+      <div class="skill"><i class="fab fa-aws"></i><span>AWS</span></div>
+      <div class="skill"><i class="fas fa-database"></i><span>SQL</span></div>
+      <div class="skill"><i class="fas fa-snowflake"></i><span>Snowflake</span></div>
+      <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="skill"><i class="fas fa-database"></i><span>DBT</span></div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="section-container">
     <h2>Contact Me</h2>
     <form id="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
