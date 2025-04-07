@@ -1,22 +1,24 @@
-/* script.js */
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".section-box");
-  const options = {
-    threshold: 0.1
-  };
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
 
-  const revealOnScroll = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+  // Fallback animation (optional)
+  const revealElements = document.querySelectorAll('[data-aos]');
+  const revealOnScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    revealElements.forEach((el) => {
+      const offsetTop = el.getBoundingClientRect().top + scrollTop;
+      if (scrollTop + windowHeight > offsetTop + 100) {
+        el.classList.add('aos-animate');
       }
     });
   };
 
-  const observer = new IntersectionObserver(revealOnScroll, options);
-  sections.forEach(section => {
-    section.classList.add("hidden");
-    observer.observe(section);
-  });
+  // Optional fallback
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // run on load
 });
