@@ -1,217 +1,233 @@
-/* style.css */
-
-:root {
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --card-bg: #f9f9f9;
-  --primary-color: #007bff;
-  --accent-color: #ffc107;
-  --container-width: 900px;
-}
-
-body.dark-mode {
-  --bg-color: #1e1e1e;
-  --text-color: #eeeeee;
-  --card-bg: #2c2c2c;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
   transition: background-color 0.3s, color 0.3s;
-  scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
+.dark-mode {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--card-bg);
+  background-color: #000;
+  padding: 15px 0;
+  text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
+  z-index: 999;
 }
 
-.logo {
-  font-size: 1.5rem;
+header .logo {
+  font-size: 28px;
   font-weight: bold;
+  color: white;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 12px;
 }
 
 nav ul li a {
+  color: white;
+  font-size: 16px;
   text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.section-container {
-  padding: 3rem 2rem;
-  width: 100%;
-  max-width: var(--container-width);
-  box-sizing: border-box;
+nav ul li a:hover {
+  color: #ff8c00;
 }
 
-.card, .project-card, .contact-card, .form-card, .resume-card, .certificate-card {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s;
-}
-
-.card:hover, .project-card:hover, .form-card:hover, .resume-card:hover, .certificate-card:hover {
-  transform: translateY(-5px);
-}
-
+/* Toggle */
 #mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
-  font-size: 1.25rem;
+  font-size: 24px;
   cursor: pointer;
-  color: var(--text-color);
-}
-
-.skill {
-  margin-bottom: 1rem;
-}
-
-.skill-name {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.skill-bar {
-  background: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 12px;
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  animation: grow 1.5s ease-out forwards;
-}
-
-@keyframes grow {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-.accordion-toggle {
-  display: inline-block;
-  margin: 1rem 0;
-  background-color: var(--primary-color);
   color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
-.accordion-content {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
+/* Section layout */
+.section-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-.accordion-content.active {
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: inherit;
   display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-form input, form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
+.section-container p,
+.section-container li {
+  font-size: 1.05rem;
 }
 
-form button {
-  background-color: var(--accent-color);
-  color: #000;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-form button:hover {
-  background-color: #e0a800;
-}
-
-.project-card {
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transform: scale(1.02);
-}
-
-.rating {
-  color: gold;
-  font-size: 1rem;
-}
-
-.contact-section {
+/* Contact card */
+.contact-card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: space-between;
 }
 
-.contact-card {
-  flex: 1 1 300px;
+.contact-item {
+  margin: 10px 0;
+  font-size: 1rem;
+  width: 48%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.form-card {
-  flex: 2 1 500px;
-}
-
-.contact-links a {
-  display: block;
-  margin: 0.25rem 0;
-  color: var(--text-color);
+.contact-item a {
+  color: #333;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.contact-links a:hover {
-  color: var(--primary-color);
+.contact-item a:hover {
+  color: #ff8c00;
 }
 
-.resume-card embed, .resume-card a.button {
-  display: block;
-  margin: 1rem auto;
+/* About, Resume, Certificates, Projects */
+.card,
+.project-card,
+.certification-card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.project-card:hover,
+.certification-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* Resume */
+.resume-container embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #000;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+  background-color: #ff8c00;
+  transform: scale(1.05);
+}
+
+/* Skills */
+.skill-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
   text-align: center;
-  max-width: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
-.certificate-card ul {
-  padding-left: 1rem;
+.skill i {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
-.certificate-card li {
-  margin: 0.5rem 0;
+.skill-stars {
+  margin-top: 5px;
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+/* Contact Form */
+form {
+  margin-top: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+/* GitHub Contributions */
+#github-contributions img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Accordion (if needed for projects) */
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.active {
+  display: block;
 }
