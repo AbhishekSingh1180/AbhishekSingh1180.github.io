@@ -6,6 +6,7 @@
   --card-bg: #f9f9f9;
   --primary-color: #007bff;
   --accent-color: #ffc107;
+  --container-width: 900px;
 }
 
 body.dark-mode {
@@ -22,6 +23,9 @@ body {
   margin: 0;
   transition: background-color 0.3s, color 0.3s;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -34,6 +38,9 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
 }
 
 .logo {
@@ -45,6 +52,8 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
@@ -55,9 +64,12 @@ nav ul li a {
 
 .section-container {
   padding: 3rem 2rem;
+  width: 100%;
+  max-width: var(--container-width);
+  box-sizing: border-box;
 }
 
-.card, .project-card, .contact-card, .form-card {
+.card, .project-card, .contact-card, .form-card, .resume-card, .certificate-card {
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 12px;
@@ -66,7 +78,7 @@ nav ul li a {
   transition: transform 0.3s;
 }
 
-.card:hover, .project-card:hover, .form-card:hover {
+.card:hover, .project-card:hover, .form-card:hover, .resume-card:hover, .certificate-card:hover {
   transform: translateY(-5px);
 }
 
@@ -132,6 +144,7 @@ form input, form textarea {
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 
 form button {
@@ -141,6 +154,10 @@ form button {
   padding: 0.75rem 1.5rem;
   cursor: pointer;
   border-radius: 6px;
+}
+
+form button:hover {
+  background-color: #e0a800;
 }
 
 .project-card {
@@ -182,4 +199,19 @@ form button {
 
 .contact-links a:hover {
   color: var(--primary-color);
+}
+
+.resume-card embed, .resume-card a.button {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.certificate-card ul {
+  padding-left: 1rem;
+}
+
+.certificate-card li {
+  margin: 0.5rem 0;
 }

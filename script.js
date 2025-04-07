@@ -1,23 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Dark mode toggle
-  const toggle = document.getElementById("mode-toggle");
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+// script.js
+
+document.getElementById("mode-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("mode-toggle").textContent =
+    document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+});
+
+document.querySelectorAll("nav ul li a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(e.target.getAttribute("href"));
+    target.scrollIntoView({ behavior: "smooth" });
   });
+});
 
-  // Accordion for project section
-  const accordionToggle = document.querySelector(".accordion-toggle");
-  const accordionContent = document.querySelector(".accordion-content");
+document.querySelector(".accordion-toggle").addEventListener("click", () => {
+  document.querySelector(".accordion-content").classList.toggle("active");
+});
 
-  accordionToggle.addEventListener("click", () => {
-    accordionContent.classList.toggle("active");
-  });
-
-  // GitHub Contributions Image
-  const githubContributionImage = new Image();
-  githubContributionImage.src = "https://ghchart.rshah.org/AbhishekSingh1180";
-  githubContributionImage.alt = "GitHub Contributions";
-  githubContributionImage.style.width = "100%";
-  document.querySelector("#skills").appendChild(githubContributionImage);
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Message sent! Thank you for reaching out.");
+  e.target.reset();
 });
