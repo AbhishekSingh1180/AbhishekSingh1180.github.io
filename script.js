@@ -1,24 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS
+// script.js
+
+// Initialize AOS library
+document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
-    duration: 800,
+    duration: 1000,
     once: true,
+    easing: 'ease-in-out',
   });
+});
 
-  // Fallback animation (optional)
-  const revealElements = document.querySelectorAll('[data-aos]');
-  const revealOnScroll = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    revealElements.forEach((el) => {
-      const offsetTop = el.getBoundingClientRect().top + scrollTop;
-      if (scrollTop + windowHeight > offsetTop + 100) {
-        el.classList.add('aos-animate');
-      }
-    });
-  };
-
-  // Optional fallback
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // run on load
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
 });
