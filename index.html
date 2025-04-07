@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh - Data Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="script.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => { AOS.init(); });</script>
 </head>
 <body>
   <header>
@@ -30,7 +36,7 @@
   </header>
 
   <main>
-    <section id="contact-info" class="section-box">
+    <section id="contact-info" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-address-card"></i> Contact Info</h2>
       <div class="card">
         <p><i class="fas fa-phone"></i> Phone: +91 12345 67890</p>
@@ -41,12 +47,12 @@
       </div>
     </section>
 
-    <section id="about" class="section-box">
+    <section id="about" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-user"></i> About Me</h2>
       <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python. Skilled in Google Cloud and AWS, working at Eli Lilly & Company in the healthcare data domain.</p>
     </section>
 
-    <section id="career" class="section-box">
+    <section id="career" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-briefcase"></i> Career</h2>
       <div class="card">
         <h3>Eli Lilly and Company</h3>
@@ -67,7 +73,7 @@
       </div>
     </section>
 
-    <section id="resume" class="section-box">
+    <section id="resume" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-file-alt"></i> Resume</h2>
       <div class="card">
         <embed src="resume.pdf" width="100%" height="500px" />
@@ -75,7 +81,7 @@
       </div>
     </section>
 
-    <section id="certificates" class="section-box">
+    <section id="certificates" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-award"></i> Certificates</h2>
       <div class="card">
         <ul>
@@ -86,28 +92,30 @@
       </div>
     </section>
 
-    <section id="projects" class="section-box">
+    <section id="projects" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-cogs"></i> Projects</h2>
-      <div class="card">
-        <h3>Weather Forecast Pipeline</h3>
-        <p>Built real-time weather forecasting pipeline with Snowflake.</p>
-        <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-      <div class="card">
-        <h3>Snowflake to BigQuery Migration</h3>
-        <p>Migrated data for analytics efficiency.</p>
-        <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-      <div class="card">
-        <h3>FakerAPI ELT Pipeline</h3>
-        <p>Simulated and transformed datasets for data testing.</p>
-        <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <div class="project-grid">
+        <div class="card">
+          <h3>Weather Forecast Pipeline</h3>
+          <p>Built real-time weather forecasting pipeline with Snowflake.</p>
+          <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <div class="card">
+          <h3>Snowflake to BigQuery Migration</h3>
+          <p>Migrated data for analytics efficiency.</p>
+          <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <div class="card">
+          <h3>FakerAPI ELT Pipeline</h3>
+          <p>Simulated and transformed datasets for data testing.</p>
+          <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="section-box">
+    <section id="skills" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-star"></i> Skills</h2>
-      <div class="skills-stars">
+      <div class="skills-grid">
         <p>AWS: ⭐⭐⭐⭐☆</p>
         <p>SQL: ⭐⭐⭐⭐⭐</p>
         <p>Snowflake: ⭐⭐⭐⭐☆</p>
@@ -116,14 +124,14 @@
       </div>
     </section>
 
-    <section id="github" class="section-box">
+    <section id="github" class="section-box" data-aos="fade-up">
       <h2><i class="fab fa-github"></i> GitHub Contributions</h2>
       <div class="card">
         <img src="https://ghchart.rshah.org/AbhishekSingh1180" alt="GitHub chart" />
       </div>
     </section>
 
-    <section id="contact" class="section-box">
+    <section id="contact" class="section-box" data-aos="fade-up">
       <h2><i class="fas fa-envelope"></i> Contact Me</h2>
       <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required />
