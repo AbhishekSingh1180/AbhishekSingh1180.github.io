@@ -6,6 +6,8 @@
   <title>Abhishek Singh - Data Engineer Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Add Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -27,7 +29,7 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a passionate Data Engineer with expertise in big data technologies, data pipelines, and cloud platforms. Currently, I work at XYZ Company where I manage complex datasets and optimize data workflows.</p>
+    <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python, with a strong background in Data Warehousing. Skilled in Google Cloud Platform and AWS. Currently working at Eli Lilly & Company, focused on data engineering in the healthcare domain.</p>
   </section>
 
   <!-- Career Section -->
@@ -35,16 +37,25 @@
     <h2>Career</h2>
     <div class="timeline">
       <div class="card">
-        <h3>XYZ Company</h3>
-        <p>Role: Data Engineer</p>
-        <p>2021 - Present</p>
-        <p>Description of your responsibilities, tools used, and achievements.</p>
+        <h3>Eli Lilly and Company</h3>
+        <p>Role: Engineer II – Data Engineering</p>
+        <p>Location: Bengaluru, Karnataka, India (Hybrid)</p>
+        <p>Jan 2025 - Present · 4 mos</p>
+        <ul>
+          <li>Worked on Airflow, DBT, AWS, Docker, and GitHub actions in the modular drug discovery domain.</li>
+          <li>Managed data related to compounds, In-vitro, and In-vivo research data.</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>ABC Corporation</h3>
-        <p>Role: Data Analyst</p>
-        <p>2019 - 2021</p>
-        <p>Description of your responsibilities, tools used, and achievements.</p>
+        <h3>DataGrokr</h3>
+        <p>Role: Data Engineer</p>
+        <p>Location: Bengaluru, Karnataka, India (Hybrid)</p>
+        <p>Dec 2021 - Feb 2024 · 2 yrs 3 mos</p>
+        <ul>
+          <li>Successfully migrated 3 years' worth of historical data for a US grocery chain to Snowflake using SnowSQL and Pandas.</li>
+          <li>Collaborated with cross-functional teams to optimize financial data, resulting in a $100k cost reduction.</li>
+          <li>Built and managed data pipeline services in GCP including Dataflow, Composer, Airflow, and BigQuery.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -60,14 +71,16 @@
   <section id="certificates">
     <h2>Certificates</h2>
     <ul>
-      <li><a href="https://example.com" target="_blank">Certified Data Engineer - XYZ Platform</a></li>
-      <li><a href="https://example.com" target="_blank">Machine Learning Specialization - Coursera</a></li>
+      <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Professional Data Engineer</a></li>
+      <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></li>
+      <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></li>
     </ul>
   </section>
 
   <!-- GitHub Contributions Section -->
   <section id="github-contributions">
     <h2>GitHub Contributions by Year</h2>
+    <div id="tabs"></div> <!-- Dynamic Year Tabs -->
     <canvas id="githubContributionsChart"></canvas>
   </section>
 
@@ -75,28 +88,64 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3>Project 1</h3>
-      <p>Description of the project, goals, and technologies used (e.g., Python, TensorFlow, Flask, etc.).</p>
-      <a href="https://github.com/AbhishekSingh1180/project1" target="_blank">View on GitHub</a>
+      <h3>Weather Forecast Pipeline - Snowflake</h3>
+      <p>Built a pipeline to forecast weather data and store it in Snowflake for real-time querying and analysis.</p>
+      <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Snowflake BigQuery Data Migration</h3>
+      <p>Migrated data from Snowflake to BigQuery for improved data analytics and operational efficiency.</p>
+      <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>FakerAPI ELT Pipeline</h3>
+      <p>Built an ELT pipeline using Faker API to simulate and transform large datasets for data testing.</p>
+      <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Sensex Data Analysis</h3>
+      <p>Performed advanced data analysis on Sensex data to predict trends and provide valuable insights.</p>
+      <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank">View on GitHub</a>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skill">
-      <h3>Python</h3>
-      <div class="rating">
-        <span class="star">★★★★☆</span>
+    <div class="skill-category">
+      <h3>Top Skills</h3>
+      <div class="skill">
+        <i class="fab fa-aws"></i><span>AWS</span>
+        <span class="rating">★★★★☆</span>
       </div>
-      <p>Certificate: <a href="#">Python for Data Science - Coursera</a></p>
+      <div class="skill">
+        <i class="fab fa-code"></i><span>SQL</span>
+        <span class="rating">★★★★☆</span>
+      </div>
+      <div class="skill">
+        <i class="fas fa-snowflake"></i><span>Snowflake</span>
+        <span class="rating">★★★★☆</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-python"></i><span>Python</span>
+        <span class="rating">★★★★☆</span>
+      </div>
+      <div class="skill">
+        <i class="fas fa-database"></i><span>DBT (Data Build Tool)</span>
+        <span class="rating">★★★★☆</span>
+      </div>
     </div>
-    <div class="skill">
-      <h3>SQL</h3>
-      <div class="rating">
-        <span class="star">★★★☆☆</span>
+    <div class="skill-category">
+      <h3>Other Skills</h3>
+      <div class="skill">
+        <i class="fab fa-google"></i><span>Google Cloud Platform</span>
       </div>
-      <p>Certificate: <a href="#">SQL for Data Analysis - Udemy</a></p>
+      <div class="skill">
+        <i class="fas fa-database"></i><span>PostgreSQL</span>
+      </div>
+      <div class="skill">
+        <i class="fab fa-clock"></i><span>Apache Airflow</span>
+      </div>
     </div>
   </section>
 
