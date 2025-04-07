@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh - Data Engineer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
   <header>
     <div class="logo">Abhishek Singh</div>
+    <button id="mode-toggle">🌙</button>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -20,103 +21,127 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="mode-toggle">Toggle Mode</button></li>
       </ul>
     </nav>
   </header>
 
   <section id="about" class="section-container">
     <h2>About Me</h2>
-    <p>Experienced Data Engineer proficient in Snowflake DWH, SQL, and Python, with a strong background in Data Warehousing. Skilled in Google Cloud Platform and AWS. Currently working at Eli Lilly & Company, focused on data engineering in the healthcare domain.</p>
+    <p>Experienced Data Engineer proficient in Snowflake, SQL, Python, GCP, AWS. Currently at Eli Lilly & Company working in data engineering for healthcare.</p>
   </section>
 
   <section id="career" class="section-container">
     <h2>Career</h2>
-    <div class="timeline">
-      <div class="card">
-        <h3>Eli Lilly and Company</h3>
-        <p>Engineer II – Data Engineering</p>
-        <p>Bengaluru, Karnataka, India (Hybrid)</p>
-        <p>Jan 2025 - Present · 4 mos</p>
-        <ul>
-          <li>Worked on Airflow, DBT, AWS, Docker, and GitHub actions in the modular drug discovery domain.</li>
-          <li>Managed data related to compounds, In-vitro, and In-vivo research data.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>DataGrokr</h3>
-        <p>Data Engineer</p>
-        <p>Bengaluru, Karnataka, India (Hybrid)</p>
-        <p>Dec 2021 - Feb 2024 · 2 yrs 3 mos</p>
-        <ul>
-          <li>Migrated 3 years' worth of historical data for a US grocery chain to Snowflake.</li>
-          <li>Optimized financial data resulting in $100k cost reduction.</li>
-          <li>Built pipelines in GCP using Dataflow, Composer, and BigQuery.</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Eli Lilly and Company</h3>
+      <p><strong>Engineer II – Data Engineering</strong></p>
+      <p>Bengaluru, India (Hybrid)</p>
+      <p>Jan 2025 - Present</p>
+      <ul>
+        <li>Worked on Airflow, DBT, AWS, Docker, GitHub Actions in modular drug discovery.</li>
+        <li>Managed compound and research data.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>DataGrokr</h3>
+      <p><strong>Data Engineer</strong></p>
+      <p>Bengaluru, India (Hybrid)</p>
+      <p>Dec 2021 - Feb 2024</p>
+      <ul>
+        <li>Migrated grocery chain data to Snowflake using SnowSQL and Pandas.</li>
+        <li>Reduced costs by $100k through data optimization.</li>
+        <li>Built pipelines using GCP tools like Dataflow, Composer, and BigQuery.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="resume" class="section-container">
+  <section id="resume" class="resume-section">
     <h2>Resume</h2>
-    <embed src="resume.pdf" width="100%" height="600px" />
-    <a href="resume.pdf" download class="button">Download Resume</a>
+    <div class="card">
+      <embed src="resume.pdf" width="100%" height="600px" />
+      <a href="resume.pdf" download>Download Resume</a>
+    </div>
   </section>
 
-  <section id="certificates" class="section-container">
+  <section id="certificates" class="resume-section">
     <h2>Certificates</h2>
-    <ul>
-      <li><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Professional Data Engineer</a></li>
-      <li><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></li>
-      <li><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></li>
-    </ul>
-  </section>
-
-  <section id="github-contributions" class="section-container">
-    <h2>GitHub Contributions</h2>
-    <div id="github-contribution-wrapper">Loading GitHub Contributions...</div>
+    <div class="card">
+      <p><a href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">Google Cloud Certified - Professional Data Engineer</a></p>
+      <p><a href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">Snowflake Certified Data Engineer</a></p>
+      <p><a href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">HackerRank SQL Certification</a></p>
+    </div>
   </section>
 
   <section id="projects" class="section-container">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Weather Forecast Pipeline - Snowflake</h3>
-      <p>Pipeline to forecast and analyze weather data in Snowflake.</p>
+    <div class="project-card">
+      <h3>Weather Forecast Pipeline</h3>
+      <p>Built a pipeline to forecast weather data using Snowflake.</p>
       <a href="https://github.com/AbhishekSingh1180/WeatherForecastPipeline-Snowflake" target="_blank">View on GitHub</a>
     </div>
-    <div class="project">
-      <h3>Snowflake BigQuery Data Migration</h3>
-      <p>Migrated Snowflake data to BigQuery for analytics.</p>
-      <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project">
-      <h3>FakerAPI ELT Pipeline</h3>
-      <p>Simulated and transformed test data using Faker API.</p>
-      <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project">
-      <h3>Sensex Data Analysis</h3>
-      <p>Analyzed Sensex data for trends and insights.</p>
-      <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank">View on GitHub</a>
+    <button class="accordion-toggle">Show More Projects</button>
+    <div class="accordion-content">
+      <div class="project-card">
+        <h3>BigQuery Migration</h3>
+        <p>Migrated from Snowflake to BigQuery for better analytics.</p>
+        <a href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Faker API ELT</h3>
+        <p>Simulated and transformed test data via ELT pipeline.</p>
+        <a href="https://github.com/AbhishekSingh1180/FakerAPI-ELT-pipeline" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Sensex Data Analysis</h3>
+        <p>Analyzed stock trends and predicted market patterns.</p>
+        <a href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank">View on GitHub</a>
+      </div>
     </div>
   </section>
 
   <section id="skills" class="section-container">
     <h2>Skills</h2>
-    <div class="skill-category">
-      <div class="skill"><i class="fab fa-aws"></i><div>AWS<div class="stars">★★★★☆</div></div></div>
-      <div class="skill"><i class="fas fa-database"></i><div>SQL<div class="stars">★★★★★</div></div></div>
-      <div class="skill"><i class="fas fa-snowflake"></i><div>Snowflake<div class="stars">★★★★★</div></div></div>
-      <div class="skill"><i class="fab fa-python"></i><div>Python<div class="stars">★★★★☆</div></div></div>
-      <div class="skill"><i class="fas fa-database"></i><div>DBT<div class="stars">★★★★☆</div></div></div>
+    <div class="skill">
+      <div class="skill-name">Python <span>⭐⭐⭐⭐⭐</span></div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">SQL <span>⭐⭐⭐⭐⭐</span></div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Snowflake <span>⭐⭐⭐⭐½</span></div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">DBT <span>⭐⭐⭐⭐</span></div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">AWS/GCP <span>⭐⭐⭐⭐</span></div>
+      <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+    </div>
+  </section>
+
+  <section id="github-contributions" class="section-container">
+    <h2>GitHub Contributions</h2>
+    <div id="github-contribution-wrapper">
+      <img id="github-contribution-image" src="" alt="GitHub Contributions" />
     </div>
   </section>
 
   <section id="contact" class="section-container">
     <h2>Contact Me</h2>
+    <div class="contact-card">
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p><strong>Email:</strong> abhishek@example.com</p>
+      <p><a href="https://linkedin.com/in/abhisheksingh1180" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+      <p><a href="https://github.com/abhisheksingh1180" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+      <p><a href="https://leetcode.com/abhisheksingh1180" target="_blank"><i class="fas fa-code"></i> LeetCode</a></p>
+    </div>
     <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
