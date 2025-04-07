@@ -1,20 +1,27 @@
-/* Global Styles */
+/* General styling */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #000;
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Dark text for contrast */
 }
 
+/* Header styling */
 header {
-  background-color: #000;
-  padding: 20px 0;
+  background-color: #000000; /* Black background */
+  color: white;
+  padding: 15px 0;
   text-align: center;
 }
 
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 nav ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
@@ -24,100 +31,121 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
   text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-h1, h2, h3 {
-  color: #000;
+nav ul li a:hover {
+  color: #ff8c00; /* Fancy hover effect */
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+/* Section Styling */
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-a {
-  color: #000;
-  text-decoration: underline;
+/* About Section */
+#about {
+  background-color: #f7f7f7; /* Off-white background */
+  padding: 40px;
+  border-radius: 8px;
 }
 
-/* Card and Timeline Styles */
-.card {
-  background-color: #f0f0f0;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project {
-  background-color: #f0f0f0;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project h3 {
-  margin-top: 0;
-}
-
-/* Skills Section */
-.skill-category {
-  margin-bottom: 20px;
-}
-
-.skill {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.skill i {
+/* Resume Section */
+#resume h2 {
+  display: inline-block;
   margin-right: 10px;
 }
 
-/* GitHub Contributions */
-#github-contributions {
-  margin: 20px 0;
-}
-
-#tabs {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-#tabs button {
-  background-color: #000;
-  color: #fff;
+#resume .button {
+  background-color: #000000;
+  color: white;
   padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-#tabs button:hover {
-  background-color: #333;
+#resume .button:hover {
+  background-color: #ff8c00;
+}
+
+/* Certificates Section */
+#certificates ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#certificates ul li {
+  margin-bottom: 10px;
+}
+
+#certificates ul li a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+#certificates ul li a:hover {
+  color: #ff8c00;
+}
+
+/* Project Links */
+#projects .project a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#projects .project a:hover {
+  color: #ff8c00;
+}
+
+/* Fancy Links for GitHub, LinkedIn, Leetcode */
+a {
+  color: #000000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff8c00; /* Orange hover effect */
 }
 
 /* Contact Section */
-form input,
-form textarea {
-  width: 100%;
+#contact form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#contact form input, #contact form textarea {
   padding: 10px;
-  margin: 10px 0;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-form button {
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
+#contact form button {
+  padding: 10px;
+  background-color: #000000;
+  color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-form button:hover {
-  background-color: #333;
+#contact form button:hover {
+  background-color: #ff8c00;
+}
+
+/* GitHub Contributions Chart */
+#github-contributions {
+  margin-top: 40px;
 }
