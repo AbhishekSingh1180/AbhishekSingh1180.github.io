@@ -15,7 +15,7 @@ body {
 
 /* Header & Navigation */
 header {
-  background-color: #333;
+  background-color: black;
   padding: 20px;
   text-align: center;
   position: sticky;
@@ -24,7 +24,7 @@ header {
 }
 
 header .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -45,7 +45,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #0fa3b1;
+  color: #ddd;
 }
 
 /* Section Styles */
@@ -57,6 +57,12 @@ section {
 h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #bbb;
 }
 
 .project, .card {
