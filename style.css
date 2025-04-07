@@ -1,32 +1,39 @@
 /* General styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: #f4f4f4;
+  color: #333;
+  scroll-behavior: smooth;
 }
 
 header {
-  background-color: #000000;
+  background: linear-gradient(90deg, #000000, #434343);
   color: white;
   padding: 15px 0;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 nav ul {
   list-style-type: none;
   padding: 0;
+  margin-top: 10px;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
+  margin: 0 12px;
 }
 
 nav ul li a {
@@ -41,27 +48,35 @@ nav ul li a:hover {
 }
 
 h2 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #222;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .section-container {
-  padding: 40px 20px;
-  margin-bottom: 40px;
+  padding: 60px 20px;
+  margin-bottom: 30px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .project, .timeline .card {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 25px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project a, .timeline .card a {
   text-decoration: none;
-  color: #1e6823;
+  color: #007acc;
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
@@ -75,6 +90,7 @@ button {
   border: none;
   cursor: pointer;
   text-align: center;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -84,9 +100,10 @@ button:hover {
 #github-contributions img {
   width: 100%;
   height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-/* Certificates and other sections */
 ul {
   list-style-type: none;
   padding: 0;
@@ -109,24 +126,18 @@ ul li a:hover {
 .skill-category {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 15px;
 }
 
 .skill {
   font-size: 1.2rem;
-  margin: 10px;
-}
-
-.skill i {
-  margin-right: 10px;
-}
-
-.skill-category .skill {
-  background-color: #f2f2f2;
-  padding: 15px;
-  border-radius: 5px;
-  width: 48%;
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  flex: 1 1 calc(45% - 10px);
 }
 
 form input, form textarea {
@@ -142,8 +153,26 @@ form button {
   color: white;
   padding: 12px 20px;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
   background-color: #218838;
+}
+
+/* GitHub like contribution styling */
+#github-contributions {
+  text-align: center;
+}
+
+.github-calendar-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.github-calendar-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
