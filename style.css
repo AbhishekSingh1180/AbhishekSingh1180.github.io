@@ -7,7 +7,6 @@ body {
   color: #333333; /* Dark text for contrast */
 }
 
-/* Header styling */
 header {
   background-color: #000000; /* Black background */
   color: white;
@@ -41,111 +40,110 @@ nav ul li a:hover {
   color: #ff8c00; /* Fancy hover effect */
 }
 
-/* Section Styling */
+/* About, Career, Resume, and Certificates Section */
 section {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* About Section */
-#about {
-  background-color: #f7f7f7; /* Off-white background */
   padding: 40px;
-  border-radius: 8px;
+  text-align: center;
 }
 
-/* Resume Section */
-#resume h2 {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-#resume .button {
-  background-color: #000000;
-  color: white;
+button {
   padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-#resume .button:hover {
+button:hover {
   background-color: #ff8c00;
 }
 
-/* Certificates Section */
-#certificates ul {
-  list-style-type: none;
-  padding: 0;
+/* GitHub Contributions Section */
+#github-contributions {
+  margin-top: 40px;
 }
 
-#certificates ul li {
-  margin-bottom: 10px;
+#contribution-calendar {
+  display: grid;
+  grid-template-columns: repeat(53, 20px); /* 53 weeks in a year */
+  grid-template-rows: repeat(7, 20px); /* 7 days in a week */
+  gap: 5px;
+  margin: 0 auto;
+  width: 75%;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-#certificates ul li a {
-  text-decoration: none;
-  color: #000000;
-  transition: color 0.3s ease;
+.contribution-day {
+  width: 20px;
+  height: 20px;
+  background-color: #ebedf0; /* Default gray (no contributions) */
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#certificates ul li a:hover {
-  color: #ff8c00;
+.contribution-day:hover {
+  opacity: 0.8;
 }
 
-/* Project Links */
-#projects .project a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-  transition: color 0.3s ease;
+/* Contribution color scale */
+.contribution-day.level-1 {
+  background-color: #d6e685; /* Light green - Low contributions */
 }
 
-#projects .project a:hover {
-  color: #ff8c00;
+.contribution-day.level-2 {
+  background-color: #8cc665; /* Medium green - Some contributions */
 }
 
-/* Fancy Links for GitHub, LinkedIn, Leetcode */
-a {
-  color: #000000;
-  font-weight: bold;
-  transition: color 0.3s ease;
+.contribution-day.level-3 {
+  background-color: #44a340; /* Darker green - High contributions */
 }
 
-a:hover {
-  color: #ff8c00; /* Orange hover effect */
+.contribution-day.level-4 {
+  background-color: #1e6823; /* Darkest green - Very high contributions */
 }
 
-/* Contact Section */
-#contact form {
+.contribution-day[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Contact Form */
+form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-#contact form input, #contact form textarea {
+input, textarea {
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#contact form button {
-  padding: 10px;
-  background-color: #000000;
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #28a745;
   color: white;
   border: none;
+  padding: 12px 20px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-#contact form button:hover {
-  background-color: #ff8c00;
-}
-
-/* GitHub Contributions Chart */
-#github-contributions {
-  margin-top: 40px;
+button:hover {
+  background-color: #218838;
 }
