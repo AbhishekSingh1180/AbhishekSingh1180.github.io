@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -12,69 +11,70 @@
 /* ── Reset & Root ─────────────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#04080c;
-  --bg1:#070d13;
-  --bg2:#0b1520;
-  --surface:#0f1e2d;
-  --surface2:#132333;
+  /* Slightly lighter, richer dark theme */
+  --bg:#0b1219;
+  --bg1:#111a24;
+  --bg2:#182431;
+  --surface:#1f2d3d;
+  --surface2:#27374a;
   --a1:#00e5ff;   /* cyan */
   --a2:#00ff9d;   /* green */
   --a3:#ff6b35;   /* orange accent */
-  --text:#ddeef5;
-  --muted:#5e8090;
-  --border:rgba(0,229,255,0.1);
+  --text:#e2f1f8;
+  --muted:#8fa7b3; /* Lightened muted text for better contrast */
+  --border:rgba(0,229,255,0.15);
   --glow1:0 0 40px rgba(0,229,255,0.15);
   --glow2:0 0 40px rgba(0,255,157,0.15);
   --fw:calc(100vw - 2 * clamp(1.5rem,5vw,5rem));
 }
 html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;cursor:none}
+/* Removed cursor:none for recruiter accessibility (copy-pasting text) */
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;}
 
-/* ── Cursor ───────────────────────────────────────────────────────────────── */
-#cur{position:fixed;width:10px;height:10px;background:var(–a1);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .15s,height .15s}
+/* ── Cursor (Kept the effect, but allows native cursor to show) ───────────── */
+#cur{position:fixed;width:10px;height:10px;background:var(--a1);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .15s,height .15s}
 #cur-r{position:fixed;width:32px;height:32px;border:1px solid rgba(0,229,255,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .12s ease}
-body:hover #cur{opacity:1}
 
 /* ── Nav ──────────────────────────────────────────────────────────────────── */
 nav{
-position:fixed;top:0;left:0;right:0;z-index:200;
-display:flex;align-items:center;justify-content:space-between;
-padding:.9rem clamp(1.5rem,5vw,5rem);
-background:rgba(4,8,12,.75);
-backdrop-filter:blur(16px);
-border-bottom:1px solid var(–border);
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem clamp(1.5rem,5vw,5rem);
+  background:rgba(11, 18, 25, 0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
 }
 .nav-logo{
-font-family:‘DM Mono’,monospace;font-size:.8rem;color:var(–a2);
-letter-spacing:.2em;text-transform:uppercase;
+  font-family:'DM Mono',monospace;font-size:.8rem;color:var(--a2);
+  letter-spacing:.2em;text-transform:uppercase;
 }
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{
-font-family:‘DM Mono’,monospace;font-size:.72rem;letter-spacing:.15em;
-text-transform:uppercase;color:var(–muted);text-decoration:none;
-transition:color .2s;
+  font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none;
+  transition:color .2s;
 }
-.nav-links a:hover{color:var(–a1)}
-.nav-menu-btn{display:none;background:none;border:1px solid var(–border);color:var(–a1);padding:.4rem .8rem;font-family:‘DM Mono’,monospace;font-size:.75rem;cursor:none}
+.nav-links a:hover{color:var(--a1)}
+.nav-menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--a1);padding:.4rem .8rem;font-family:'DM Mono',monospace;font-size:.75rem;cursor:pointer}
 @media(max-width:768px){
-.nav-links{display:none;position:fixed;inset:0;top:56px;background:rgba(4,8,12,.97);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
-.nav-links.open{display:flex}
-.nav-menu-btn{display:block}
+  .nav-links{display:none;position:fixed;inset:0;top:56px;background:rgba(11, 18, 25, 0.98);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+  .nav-links.open{display:flex}
+  .nav-menu-btn{display:block}
 }
 
 /* ── Sections ─────────────────────────────────────────────────────────────── */
-section{padding:7rem clamp(1.5rem,5vw,5rem)}
+section{padding:6rem clamp(1.5rem,5vw,5rem)}
 .sec-tag{
-font-family:‘DM Mono’,monospace;color:var(–a1);font-size:.7rem;
-letter-spacing:.35em;text-transform:uppercase;
-display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
+  font-family:'DM Mono',monospace;color:var(--a1);font-size:.7rem;
+  letter-spacing:.35em;text-transform:uppercase;
+  display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
 }
-.sec-tag::after{content:’’;flex:1;height:1px;background:var(–border);max-width:160px}
+.sec-tag::after{content:'';flex:1;height:1px;background:var(--border);max-width:160px}
 .sec-title{
-font-size:clamp(2rem,4vw,2.8rem);font-weight:800;
-letter-spacing:-.02em;line-height:1.1;margin-bottom:.6rem;
+  font-size:clamp(2rem,4vw,2.8rem);font-weight:800;
+  letter-spacing:-.02em;line-height:1.2;margin-bottom:.6rem;
 }
-.sec-sub{color:var(–muted);font-family:‘DM Mono’,monospace;font-size:.82rem;line-height:1.8;max-width:540px;margin-bottom:3rem}
+.sec-sub{color:var(--muted);font-family:'DM Mono',monospace;font-size:.82rem;line-height:1.8;max-width:540px;margin-bottom:3rem}
 
 /* ── Reveal ───────────────────────────────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
@@ -84,302 +84,311 @@ letter-spacing:-.02em;line-height:1.1;margin-bottom:.6rem;
 HERO
 ══════════════════════════════════════════════════════════════════════════════*/
 #hero{
-min-height:100vh;position:relative;
-display:flex;align-items:center;
-padding:0 clamp(1.5rem,5vw,5rem);overflow:hidden;
+  min-height:100vh;position:relative;
+  display:flex;align-items:center;
+  padding:0 clamp(1.5rem,5vw,5rem);overflow:hidden;
 }
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
 .hero-inner{position:relative;z-index:2;max-width:760px}
 .hero-eyebrow{
-font-family:‘DM Mono’,monospace;font-size:.72rem;color:var(–a2);
-letter-spacing:.35em;text-transform:uppercase;
-margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem;
+  font-family:'DM Mono',monospace;font-size:.72rem;color:var(--a2);
+  letter-spacing:.35em;text-transform:uppercase;
+  margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem;
 }
-.hero-eyebrow::before{content:’’;width:28px;height:1px;background:var(–a2)}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--a2)}
 .hero-name{
-font-family:‘Syne’,sans-serif;
-font-size:clamp(3.2rem,8vw,6.5rem);
-font-weight:800;line-height:.95;letter-spacing:-.03em;
-margin-bottom:1.2rem;
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3.2rem,8vw,6.5rem);
+  font-weight:800;line-height:1.05;letter-spacing:-.03em;
+  margin-bottom:1.2rem;
 }
 .hero-name .outline{
-color:transparent;
--webkit-text-stroke:1.5px var(–a1);
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--a1);
 }
 .hero-role{
-font-family:‘DM Mono’,monospace;font-size:clamp(.85rem,1.5vw,1rem);
-color:var(–muted);line-height:1.8;margin-bottom:2.5rem;
-max-width:540px;
+  font-family:'DM Mono',monospace;font-size:clamp(.85rem,1.5vw,1rem);
+  color:var(--muted);line-height:1.8;margin-bottom:2.5rem;
+  max-width:540px;
 }
-.hero-role .typed-txt{color:var(–text)}
-.blink{animation:blink 1s step-end infinite;color:var(–a1)}
+.hero-role .typed-txt{color:var(--text)}
+.blink{animation:blink 1s step-end infinite;color:var(--a1)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
 .btn{
-display:inline-flex;align-items:center;gap:.5rem;
-padding:.75rem 1.8rem;font-family:‘DM Mono’,monospace;
-font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
-text-decoration:none;border-radius:2px;cursor:none;transition:all .2s;
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.8rem;font-family:'DM Mono',monospace;
+  font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;border-radius:4px;cursor:pointer;transition:all .2s;
 }
-.btn-primary{background:var(–a1);color:#04080c;border:1px solid var(–a1)}
-.btn-primary:hover{background:transparent;color:var(–a1);box-shadow:var(–glow1)}
-.btn-ghost{background:transparent;color:var(–a2);border:1px solid rgba(0,255,157,.3)}
-.btn-ghost:hover{border-color:var(–a2);box-shadow:var(–glow2)}
+.btn-primary{background:var(--a1);color:#04080c;border:1px solid var(--a1);font-weight: 600;}
+.btn-primary:hover{background:transparent;color:var(--a1);box-shadow:var(--glow1)}
+.btn-ghost{background:transparent;color:var(--a2);border:1px solid rgba(0,255,157,.3)}
+.btn-ghost:hover{border-color:var(--a2);box-shadow:var(--glow2)}
 .hero-meta{
-position:absolute;right:clamp(1.5rem,5vw,5rem);bottom:3.5rem;z-index:2;
-display:flex;flex-direction:column;gap:1.8rem;
+  position:absolute;right:clamp(1.5rem,5vw,5rem);bottom:3.5rem;z-index:2;
+  display:flex;flex-direction:column;gap:1.8rem;
 }
 @media(max-width:768px){.hero-meta{display:none}}
-.stat-num{font-size:2.2rem;font-weight:800;color:var(–a1);line-height:1;font-variant-numeric:tabular-nums}
-.stat-lbl{font-family:‘DM Mono’,monospace;font-size:.6rem;color:var(–muted);letter-spacing:.2em;text-transform:uppercase}
+.stat-num{font-size:2.2rem;font-weight:800;color:var(--a1);line-height:1;font-variant-numeric:tabular-nums}
+.stat-lbl{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase; margin-top:0.4rem;}
 .scroll-hint{
-position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);z-index:2;
-font-family:‘DM Mono’,monospace;font-size:.65rem;color:var(–muted);
-letter-spacing:.2em;text-transform:uppercase;
-display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);z-index:2;
+  font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);
+  letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
 }
-.scroll-line{width:1px;height:40px;background:linear-gradient(var(–a1),transparent);animation:scrollDown 1.8s ease-in-out infinite}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--a1),transparent);animation:scrollDown 1.8s ease-in-out infinite}
 @keyframes scrollDown{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ════════════════════════════════════════════════════════════════════════════
 ABOUT
 ══════════════════════════════════════════════════════════════════════════════*/
-#about{background:var(–bg1)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:1rem;align-items:start}
+#about{background:var(--bg1)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2rem;align-items:start}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
 .about-text p{
-font-family:‘DM Mono’,monospace;font-size:.85rem;line-height:1.9;
-color:var(–muted);margin-bottom:1.1rem;
+  font-family:'DM Mono',monospace;font-size:.9rem;line-height:1.8;
+  color:var(--muted);margin-bottom:1.2rem;
 }
-.about-text p b{color:var(–text)}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.about-text p b{color:var(--text)}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
 .tag{
-font-family:‘DM Mono’,monospace;font-size:.68rem;letter-spacing:.1em;
-padding:.3rem .8rem;border-radius:2px;
-background:rgba(0,229,255,.06);color:var(–a1);
-border:1px solid rgba(0,229,255,.18);
-transition:background .2s,box-shadow .2s;
+  font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;
+  padding:.4rem .9rem;border-radius:4px;
+  background:rgba(0,229,255,.06);color:var(--a1);
+  border:1px solid rgba(0,229,255,.18);
+  transition:background .2s,box-shadow .2s;
 }
-.tag:hover{background:rgba(0,229,255,.12);box-shadow:var(–glow1)}
+.tag:hover{background:rgba(0,229,255,.12);box-shadow:var(--glow1)}
 
 /* Pipeline canvas */
 .pipe-box{
-background:var(–surface);border:1px solid var(–border);
-border-radius:4px;padding:1.5rem;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:1.5rem;box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 #pipe-canvas{width:100%;display:block}
 .pipe-label{
-font-family:‘DM Mono’,monospace;font-size:.62rem;color:var(–muted);
-text-align:center;margin-top:.8rem;letter-spacing:.2em;
+  font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);
+  text-align:center;margin-top:1rem;letter-spacing:.2em;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
 EXPERIENCE
 ══════════════════════════════════════════════════════════════════════════════*/
-#experience{background:var(–bg)}
-.timeline{margin-top:1rem;position:relative;padding-left:1.5rem}
-.timeline::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(var(–a1),var(–a2),transparent)}
+#experience{background:var(--bg)}
+.timeline{margin-top:2rem;position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(var(--a1),var(--a2),transparent)}
 .tl-item{padding-left:2rem;padding-bottom:3rem;position:relative}
-.tl-dot{position:absolute;left:-1.25rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(–a1);box-shadow:0 0 14px var(–a1)}
-.tl-date{font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–a1);letter-spacing:.2em;margin-bottom:.4rem}
-.tl-company{font-size:1.2rem;font-weight:700;margin-bottom:.15rem}
-.tl-role{font-family:‘DM Mono’,monospace;font-size:.78rem;color:var(–muted);margin-bottom:.15rem}
-.tl-loc{font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);opacity:.6;margin-bottom:1rem}
-.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.tl-dot{position:absolute;left:-1.25rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(--a1);box-shadow:0 0 14px var(--a1)}
+.tl-date{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--a1);letter-spacing:.15em;margin-bottom:.5rem}
+.tl-company{font-size:1.4rem;font-weight:700;margin-bottom:.2rem; color:var(--text);}
+.tl-role{font-family:'DM Mono',monospace;font-size:.85rem;color:var(--text);margin-bottom:.2rem}
+.tl-loc{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);opacity:.8;margin-bottom:1.2rem}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:.8rem}
 .tl-bullets li{
-font-family:‘DM Mono’,monospace;font-size:.8rem;color:var(–muted);
-line-height:1.65;display:flex;align-items:baseline;gap:.7rem;
+  font-family:'DM Mono',monospace;font-size:.85rem;color:var(--muted);
+  line-height:1.7;display:flex;align-items:baseline;gap:.7rem;
 }
-.tl-bullets li::before{content:‘→’;color:var(–a1);flex-shrink:0}
-.tl-bullets li b{color:var(–text)}
-.tl-divider{border:none;border-top:1px solid var(–border);margin:0 0 3rem 0}
+.tl-bullets li::before{content:'→';color:var(--a1);flex-shrink:0}
+.tl-bullets li b{color:var(--text)}
+.tl-divider{border:none;border-top:1px solid var(--border);margin:0 0 3rem 0}
 
 /* ════════════════════════════════════════════════════════════════════════════
 SKILLS
 ══════════════════════════════════════════════════════════════════════════════*/
-#skills{background:var(–bg1)}
-.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:1rem}
-@media(max-width:768px){.skills-wrap{grid-template-columns:1fr;gap:2rem}}
+#skills{background:var(--bg1)}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2rem}
+@media(max-width:768px){.skills-wrap{grid-template-columns:1fr;gap:2.5rem}}
 .skill-group-title{
-font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–a2);
-letter-spacing:.25em;text-transform:uppercase;margin-bottom:1.5rem;
+  font-family:'DM Mono',monospace;font-size:.75rem;color:var(--a2);
+  letter-spacing:.25em;text-transform:uppercase;margin-bottom:1.8rem;
+  font-weight: 600;
 }
-.skill-row{margin-bottom:1.3rem}
+.skill-row{margin-bottom:1.5rem}
 .skill-top{
-display:flex;justify-content:space-between;
-font-family:‘DM Mono’,monospace;font-size:.75rem;
-color:var(–muted);margin-bottom:.4rem;
+  display:flex;justify-content:space-between;
+  font-family:'DM Mono',monospace;font-size:.8rem;
+  color:var(--text);margin-bottom:.6rem;
 }
-.skill-top span:last-child{color:var(–a1)}
-.skill-track{height:2px;background:var(–surface2);border-radius:0;overflow:visible;position:relative}
+.skill-top span:last-child{color:var(--a1)}
+.skill-track{height:4px;background:var(--surface2);border-radius:2px;overflow:visible;position:relative}
 .skill-fill{
-height:100%;width:0;
-background:linear-gradient(90deg,var(–a2),var(–a1));
-transition:width 1.4s cubic-bezier(.22,1,.36,1);position:relative;
+  height:100%;width:0;
+  background:linear-gradient(90deg,var(--a2),var(--a1));
+  transition:width 1.4s cubic-bezier(.22,1,.36,1);position:relative;
+  border-radius: 2px;
 }
 .skill-fill::after{
-content:’’;position:absolute;right:0;top:50%;transform:translate(50%,-50%);
-width:6px;height:6px;border-radius:50%;background:var(–a1);
-box-shadow:0 0 8px var(–a1);
+  content:'';position:absolute;right:0;top:50%;transform:translate(50%,-50%);
+  width:10px;height:10px;border-radius:50%;background:var(--a1);
+  box-shadow:0 0 10px var(--a1);
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
 GITHUB REPOS (dynamic)
 ══════════════════════════════════════════════════════════════════════════════*/
-#github{background:var(–bg)}
+#github{background:var(--bg)}
 .gh-profile-bar{
-display:flex;align-items:center;gap:1.5rem;
-padding:1.2rem 1.5rem;
-background:var(–surface);border:1px solid var(–border);
-border-radius:4px;margin-bottom:2.5rem;
+  display:flex;align-items:center;gap:1.5rem;
+  padding:1.5rem;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;margin-bottom:2.5rem;
 }
-.gh-avatar{width:48px;height:48px;border-radius:50%;border:2px solid var(–a1)}
+.gh-avatar{width:56px;height:56px;border-radius:50%;border:2px solid var(--a1)}
 .gh-info{flex:1}
-.gh-name{font-weight:700;font-size:1rem;margin-bottom:.15rem}
-.gh-handle{font-family:‘DM Mono’,monospace;font-size:.72rem;color:var(–muted)}
-.gh-stats{display:flex;gap:1.5rem}
+.gh-name{font-weight:700;font-size:1.1rem;margin-bottom:.2rem; color:var(--text)}
+.gh-handle{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted)}
+.gh-stats{display:flex;gap:2rem}
 .gh-stat{text-align:center}
-.gh-stat-n{font-size:1.1rem;font-weight:700;color:var(–a1)}
-.gh-stat-l{font-family:‘DM Mono’,monospace;font-size:.62rem;color:var(–muted);letter-spacing:.15em}
+.gh-stat-n{font-size:1.2rem;font-weight:700;color:var(--a1)}
+.gh-stat-l{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.15em; margin-top: 0.2rem;}
 .repos-grid{
-display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-gap:1.2rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1.5rem;
 }
 .repo-card{
-background:var(–surface);border:1px solid var(–border);
-border-radius:4px;padding:1.4rem;
-transition:border-color .25s,transform .25s;
-opacity:0;transform:translateY(20px);
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:1.5rem;
+  transition:border-color .25s,transform .25s;
+  opacity:0;transform:translateY(20px);
 }
 .repo-card.loaded{opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s ease,border-color .25s,box-shadow .25s}
-.repo-card:hover{border-color:rgba(0,229,255,.4);box-shadow:var(–glow1);transform:translateY(-3px)}
-.repo-name{font-weight:700;font-size:.95rem;margin-bottom:.5rem;color:var(–text)}
+.repo-card:hover{border-color:rgba(0,229,255,.4);box-shadow:var(--glow1);transform:translateY(-3px)}
+.repo-name{font-weight:700;font-size:1.05rem;margin-bottom:.6rem;color:var(--text)}
 .repo-name a{color:inherit;text-decoration:none}
-.repo-name a:hover{color:var(–a1)}
-.repo-desc{font-family:‘DM Mono’,monospace;font-size:.75rem;color:var(–muted);line-height:1.65;margin-bottom:1rem;min-height:2.5rem}
+.repo-name a:hover{color:var(--a1)}
+.repo-desc{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted);line-height:1.65;margin-bottom:1.2rem;min-height:2.5rem}
 .repo-meta{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
 .repo-lang{
-font-family:‘DM Mono’,monospace;font-size:.68rem;
-display:flex;align-items:center;gap:.4rem;color:var(–muted);
+  font-family:'DM Mono',monospace;font-size:.7rem;
+  display:flex;align-items:center;gap:.4rem;color:var(--muted);
 }
-.lang-dot{width:8px;height:8px;border-radius:50%}
-.repo-stars{font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);display:flex;align-items:center;gap:.3rem}
-.repo-updated{font-family:‘DM Mono’,monospace;font-size:.65rem;color:var(–muted);margin-left:auto;opacity:.6}
+.lang-dot{width:10px;height:10px;border-radius:50%}
+.repo-stars{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+.repo-updated{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:auto;opacity:.8}
 .repos-loading{
-display:flex;align-items:center;gap:.75rem;
-font-family:‘DM Mono’,monospace;font-size:.8rem;color:var(–muted);padding:2rem 0;
+  display:flex;align-items:center;gap:.75rem;
+  font-family:'DM Mono',monospace;font-size:.85rem;color:var(--muted);padding:2rem 0;
 }
-.spin{width:16px;height:16px;border:2px solid var(–border);border-top-color:var(–a1);border-radius:50%;animation:spin .7s linear infinite}
+.spin{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--a1);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* Contribution chart */
 .gh-contrib{
-margin-top:2rem;background:var(–surface);border:1px solid var(–border);
-border-radius:4px;padding:1.5rem;overflow:hidden;
+  margin-top:2.5rem;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:1.5rem;overflow:hidden;
 }
 .gh-contrib img{width:100%;display:block;filter:invert(1) hue-rotate(130deg) saturate(2) brightness(.8)}
-.gh-contrib-label{font-family:‘DM Mono’,monospace;font-size:.65rem;color:var(–muted);text-align:center;margin-top:.8rem;letter-spacing:.2em}
+.gh-contrib-label{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);text-align:center;margin-top:1rem;letter-spacing:.2em}
 
 /* ════════════════════════════════════════════════════════════════════════════
 PROJECTS (pinned)
 ══════════════════════════════════════════════════════════════════════════════*/
-#projects{background:var(–bg1)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.3rem;margin-top:1rem}
+#projects{background:var(--bg1)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:2rem}
 .proj-card{
-background:var(–surface);border:1px solid var(–border);
-border-radius:4px;overflow:hidden;
-transition:border-color .25s,transform .25s;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  transition:border-color .25s,transform .25s;
 }
-.proj-card:hover{border-color:rgba(0,255,157,.4);transform:translateY(-4px);box-shadow:var(–glow2)}
-.proj-canvas-wrap{position:relative;aspect-ratio:16/9;background:#020810;overflow:hidden}
+.proj-card:hover{border-color:rgba(0,255,157,.4);transform:translateY(-4px);box-shadow:var(--glow2)}
+.proj-canvas-wrap{position:relative;aspect-ratio:16/9;background:#060d14;overflow:hidden; border-bottom: 1px solid var(--border);}
 .proj-canvas-wrap canvas{width:100%;height:100%;display:block}
-.proj-body{padding:1.4rem}
-.proj-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.9rem}
+.proj-body{padding:1.5rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
 .proj-tag{
-font-family:‘DM Mono’,monospace;font-size:.62rem;
-padding:.2rem .55rem;border-radius:2px;
-background:rgba(0,255,157,.07);color:var(–a2);
-border:1px solid rgba(0,255,157,.2);
+  font-family:'DM Mono',monospace;font-size:.65rem;
+  padding:.3rem .6rem;border-radius:4px;
+  background:rgba(0,255,157,.07);color:var(--a2);
+  border:1px solid rgba(0,255,157,.2);
 }
-.proj-name{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.proj-desc{font-family:‘DM Mono’,monospace;font-size:.76rem;color:var(–muted);line-height:1.7;margin-bottom:1.1rem}
+.proj-name{font-size:1.1rem;font-weight:700;margin-bottom:.5rem; color:var(--text)}
+.proj-desc{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
 .proj-links{display:flex;gap:1rem}
 .proj-link{
-font-family:‘DM Mono’,monospace;font-size:.7rem;
-color:var(–a1);text-decoration:none;
-display:flex;align-items:center;gap:.35rem;
-transition:color .2s,opacity .2s;
+  font-family:'DM Mono',monospace;font-size:.75rem;
+  color:var(--a1);text-decoration:none;
+  display:flex;align-items:center;gap:.35rem;
+  transition:color .2s,opacity .2s;
 }
 .proj-link:hover{opacity:.7}
 
 /* ════════════════════════════════════════════════════════════════════════════
 CERTIFICATIONS
 ══════════════════════════════════════════════════════════════════════════════*/
-#certs{background:var(–bg)}
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
+#certs{background:var(--bg)}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
 .cert-card{
-background:var(–surface);border:1px solid var(–border);
-border-radius:4px;padding:1.4rem;
-transition:border-color .25s;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:1.5rem;
+  transition:border-color .25s;
 }
 .cert-card:hover{border-color:rgba(255,107,53,.4);box-shadow:0 0 30px rgba(255,107,53,.1)}
 .cert-issuer{
-font-family:‘DM Mono’,monospace;font-size:.65rem;
-color:var(–a3);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem;
+  font-family:'DM Mono',monospace;font-size:.7rem;
+  color:var(--a3);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;
 }
-.cert-name{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.cert-validity{font-family:‘DM Mono’,monospace;font-size:.72rem;color:var(–muted);margin-bottom:1rem}
+.cert-name{font-size:1.1rem;font-weight:700;margin-bottom:.5rem; color:var(--text);}
+.cert-validity{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted);margin-bottom:1.2rem}
 .cert-badge{
-display:inline-flex;align-items:center;gap:.4rem;
-font-family:‘DM Mono’,monospace;font-size:.65rem;
-padding:.25rem .7rem;border-radius:2px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'DM Mono',monospace;font-size:.7rem;
+  padding:.3rem .8rem;border-radius:4px;text-decoration:none;
 }
-.cert-badge.active{background:rgba(0,255,157,.1);color:var(–a2);border:1px solid rgba(0,255,157,.25)}
-.cert-badge.expired{background:rgba(255,107,53,.08);color:var(–a3);border:1px solid rgba(255,107,53,.2)}
-.cert-badge.neutral{background:rgba(0,229,255,.08);color:var(–a1);border:1px solid rgba(0,229,255,.2)}
+.cert-badge.active{background:rgba(0,255,157,.1);color:var(--a2);border:1px solid rgba(0,255,157,.25)}
+.cert-badge.expired{background:rgba(255,107,53,.08);color:var(--a3);border:1px solid rgba(255,107,53,.2)}
+.cert-badge.neutral{background:rgba(0,229,255,.08);color:var(--a1);border:1px solid rgba(0,229,255,.2)}
 
 /* ════════════════════════════════════════════════════════════════════════════
 RESUME
 ══════════════════════════════════════════════════════════════════════════════*/
-#resume{background:var(–bg1)}
+#resume{background:var(--bg1)}
 .resume-wrap{
-margin-top:1rem;border:1px solid var(–border);
-border-radius:4px;overflow:hidden;
+  margin-top:2rem;border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
 }
 .resume-bar{
-background:var(–surface);border-bottom:1px solid var(–border);
-padding:.9rem 1.4rem;display:flex;align-items:center;justify-content:space-between;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;
 }
-.resume-file{font-family:‘DM Mono’,monospace;font-size:.72rem;color:var(–muted)}
+.resume-file{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted)}
 .resume-frame{min-height:540px;background:#1a1a1a;display:flex;align-items:center;justify-content:center}
 .resume-frame embed{width:100%;height:640px;display:block}
 
 /* ════════════════════════════════════════════════════════════════════════════
-CONTACT
+CONTACT (NEW CARD DESIGN)
 ══════════════════════════════════════════════════════════════════════════════*/
-#contact{background:var(–bg);position:relative;text-align:center;overflow:hidden}
+#contact{background:var(--bg);position:relative;text-align:center;overflow:hidden; padding: 8rem clamp(1.5rem,5vw,5rem);}
 .contact-glow{
-position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-width:700px;height:700px;border-radius:50%;pointer-events:none;
-background:radial-gradient(circle,rgba(0,229,255,.04) 0%,transparent 70%);
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:700px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(0,229,255,.08) 0%,transparent 70%);
 }
-.contact-inner{position:relative;z-index:1;max-width:580px;margin:0 auto}
-.contact-big{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:1.3rem}
-.contact-big .accent{color:var(–a1)}
-.contact-desc{font-family:‘DM Mono’,monospace;font-size:.82rem;color:var(–muted);line-height:1.9;margin-bottom:3rem}
-.contact-links{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.contact-card{
+  position:relative;z-index:1;max-width:640px;margin:0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.contact-big{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:1.5rem}
+.contact-big .accent{color:var(--a1)}
+.contact-desc{font-family:'DM Mono',monospace;font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:2.5rem}
+.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 
 /* ════════════════════════════════════════════════════════════════════════════
 FOOTER
 ══════════════════════════════════════════════════════════════════════════════*/
 footer{
-border-top:1px solid var(–border);
-padding:1.8rem clamp(1.5rem,5vw,5rem);
-display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
+  border-top:1px solid var(--border);
+  background: var(--bg1);
+  padding: 2rem clamp(1.5rem,5vw,5rem);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+  font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);
 }
-.footer-status{display:flex;align-items:center;gap:.5rem;color:var(–a2)}
-.pulse{width:6px;height:6px;border-radius:50%;background:var(–a2);animation:pulse 2s ease-in-out infinite}
+.footer-status{display:flex;align-items:center;gap:.6rem;color:var(--a2)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--a2);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
 
 /* ── Lang color map ─────────────────────────────────────────────────────────*/
@@ -391,14 +400,11 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
 .lang-TypeScript{background:#2b7489}
 .lang-default{background:#888}
 </style>
-
 </head>
 <body>
 
 <div id="cur"></div>
 <div id="cur-r"></div>
-
-<!-- NAV -->
 
 <nav id="nav">
   <div class="nav-logo">// AS · DE</div>
@@ -414,8 +420,6 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   </ul>
   <button class="nav-menu-btn" id="menu-btn">MENU</button>
 </nav>
-
-<!-- HERO -->
 
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
@@ -453,8 +457,6 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   </div>
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
   <div class="sec-tag">01 · About</div>
   <h2 class="sec-title rv">Building the data layer<br/>of life sciences</h2>
@@ -487,64 +489,58 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-
 <section id="experience">
   <div class="sec-tag">02 · Experience</div>
   <h2 class="sec-title rv">Where I've worked</h2>
   <div class="timeline rv">
 
-```
-<div class="tl-item">
-  <div class="tl-dot"></div>
-  <div class="tl-date">Apr 2024 – Present</div>
-  <div class="tl-company">Eli Lilly and Company</div>
-  <div class="tl-role">Data Engineer – Research Informatics</div>
-  <div class="tl-loc">Bengaluru, Karnataka, India</div>
-  <ul class="tl-bullets">
-    <li>Build and maintain production <b>Apache Airflow DAGs</b> for end-to-end ingestion of scientific, experimental, and genomics datasets supporting <b>drug discovery workflows</b> across multiple R&D teams.</li>
-    <li>Design <b>data lakehouse architecture</b> on AWS (S3, Glue, Athena) using <b>Apache Iceberg</b>, enabling time-travel queries and schema evolution for large-scale research datasets.</li>
-    <li>Develop and manage <b>dbt transformation models on Trino</b>, integrating experimental and laboratory datasets consumed by large cross-functional R&D teams.</li>
-    <li>Collaborate with bioinformaticians and scientists to build scalable <b>ELT pipelines for genomics and lab data</b>, enabling efficient research data exploration.</li>
-    <li>Drive DataOps standards: CI/CD, dbt quality testing, data lineage documentation, and monitoring across the research data platform.</li>
-  </ul>
-</div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Apr 2024 – Present</div>
+      <div class="tl-company">Eli Lilly and Company</div>
+      <div class="tl-role">Data Engineer – Research Informatics</div>
+      <div class="tl-loc">Bengaluru, Karnataka, India</div>
+      <ul class="tl-bullets">
+        <li>Build and maintain production <b>Apache Airflow DAGs</b> for end-to-end ingestion of scientific, experimental, and genomics datasets supporting <b>drug discovery workflows</b> across multiple R&D teams.</li>
+        <li>Design <b>data lakehouse architecture</b> on AWS (S3, Glue, Athena) using <b>Apache Iceberg</b>, enabling time-travel queries and schema evolution for large-scale research datasets.</li>
+        <li>Develop and manage <b>dbt transformation models on Trino</b>, integrating experimental and laboratory datasets consumed by large cross-functional R&D teams.</li>
+        <li>Collaborate with bioinformaticians and scientists to build scalable <b>ELT pipelines for genomics and lab data</b>, enabling efficient research data exploration.</li>
+        <li>Drive DataOps standards: CI/CD, dbt quality testing, data lineage documentation, and monitoring across the research data platform.</li>
+      </ul>
+    </div>
 
-<hr class="tl-divider"/>
+    <hr class="tl-divider"/>
 
-<div class="tl-item">
-  <div class="tl-dot" style="background:var(--a2);box-shadow:0 0 14px var(--a2)"></div>
-  <div class="tl-date">Dec 2021 – Feb 2024 · 2 yrs 3 mos</div>
-  <div class="tl-company">DataGrokr Analytics</div>
-  <div class="tl-role">Data Engineer – Enterprise Data</div>
-  <div class="tl-loc">Bengaluru, Karnataka, India</div>
-  <ul class="tl-bullets">
-    <li>Migrated 3 years of historical data for the <b>largest US grocery chain</b> from CSV/JSON to Snowflake using SnowSQL, Pandas, and GitHub Actions automation.</li>
-    <li>Designed daily sales ELT pipeline in Snowflake using Snowpipe, streams, tasks, and materialized views; visualized in Power BI.</li>
-    <li>Delivered <b>~$100K OpEx savings</b> through cross-country data analysis and cost optimization in Snowflake.</li>
-    <li>Built enterprise pipelines across Snowflake, BigQuery, and GCP (Dataflow, Composer/Airflow, Kafka); integrated ServiceNow API for incident management.</li>
-    <li>Spearheaded CI/CD and DataOps standards; automated Snowflake-to-BigQuery migration pipeline.</li>
-  </ul>
-</div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--a2);box-shadow:0 0 14px var(--a2)"></div>
+      <div class="tl-date">Dec 2021 – Feb 2024 · 2 yrs 3 mos</div>
+      <div class="tl-company">DataGrokr Analytics</div>
+      <div class="tl-role">Data Engineer – Enterprise Data</div>
+      <div class="tl-loc">Bengaluru, Karnataka, India</div>
+      <ul class="tl-bullets">
+        <li>Migrated 3 years of historical data for the <b>largest US grocery chain</b> from CSV/JSON to Snowflake using SnowSQL, Pandas, and GitHub Actions automation.</li>
+        <li>Designed daily sales ELT pipeline in Snowflake using Snowpipe, streams, tasks, and materialized views; visualized in Power BI.</li>
+        <li>Delivered <b>~$100K OpEx savings</b> through cross-country data analysis and cost optimization in Snowflake.</li>
+        <li>Built enterprise pipelines across Snowflake, BigQuery, and GCP (Dataflow, Composer/Airflow, Kafka); integrated ServiceNow API for incident management.</li>
+        <li>Spearheaded CI/CD and DataOps standards; automated Snowflake-to-BigQuery migration pipeline.</li>
+      </ul>
+    </div>
 
-<hr class="tl-divider"/>
+    <hr class="tl-divider"/>
 
-<div class="tl-item">
-  <div class="tl-dot" style="background:var(--muted);box-shadow:none"></div>
-  <div class="tl-date">Jun 2021 – Dec 2021 · 7 mos</div>
-  <div class="tl-company">DataGrokr Analytics</div>
-  <div class="tl-role">Data Engineer Intern</div>
-  <div class="tl-loc">Bengaluru, Karnataka, India</div>
-  <ul class="tl-bullets">
-    <li>Built automated end-to-end ETL pipeline using Snowflake, AWS Lambda, and S3.</li>
-  </ul>
-</div>
-```
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--muted);box-shadow:none"></div>
+      <div class="tl-date">Jun 2021 – Dec 2021 · 7 mos</div>
+      <div class="tl-company">DataGrokr Analytics</div>
+      <div class="tl-role">Data Engineer Intern</div>
+      <div class="tl-loc">Bengaluru, Karnataka, India</div>
+      <ul class="tl-bullets">
+        <li>Built automated end-to-end ETL pipeline using Snowflake, AWS Lambda, and S3.</li>
+      </ul>
+    </div>
 
   </div>
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
   <div class="sec-tag">03 · Skills</div>
@@ -573,123 +569,102 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   </div>
 </section>
 
-<!-- GITHUB (dynamic) -->
-
 <section id="github">
   <div class="sec-tag">04 · GitHub</div>
   <h2 class="sec-title rv">Open source work</h2>
-
-  <!-- Profile bar injected by JS -->
-
   <div id="gh-profile" class="rv"></div>
-
-  <!-- Repos -->
-
   <div id="repos-loading" class="repos-loading"><div class="spin"></div> Fetching repositories from GitHub API…</div>
   <div class="repos-grid" id="repos-grid"></div>
-
-  <!-- Contribution chart -->
-
   <div class="gh-contrib rv">
     <img src="https://ghchart.rshah.org/00e5ff/AbhishekSingh1180" alt="GitHub contribution chart" loading="lazy"/>
     <div class="gh-contrib-label">// github contribution graph · AbhishekSingh1180</div>
   </div>
 </section>
 
-<!-- PROJECTS (featured) -->
-
 <section id="projects">
   <div class="sec-tag">05 · Projects</div>
   <h2 class="sec-title rv">Featured work</h2>
   <div class="proj-grid">
 
-```
-<div class="proj-card rv">
-  <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="network"></canvas></div>
-  <div class="proj-body">
-    <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLM</span><span class="proj-tag">dbt</span><span class="proj-tag">Vector DB</span></div>
-    <div class="proj-name">LLM Data Harmonizer</div>
-    <div class="proj-desc">Automates schema detection, vector embedding generation, and schema matching using LLMs — outputs production-ready dbt SQL models for clinical data harmonization.</div>
-    <div class="proj-links">
-      <a class="proj-link" href="https://github.com/AbhishekSingh1180/LLM-data-harmonizer" target="_blank">↗ GitHub</a>
+    <div class="proj-card rv">
+      <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="network"></canvas></div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLM</span><span class="proj-tag">dbt</span><span class="proj-tag">Vector DB</span></div>
+        <div class="proj-name">LLM Data Harmonizer</div>
+        <div class="proj-desc">Automates schema detection, vector embedding generation, and schema matching using LLMs — outputs production-ready dbt SQL models for clinical data harmonization.</div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/AbhishekSingh1180/LLM-data-harmonizer" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proj-card rv">
-  <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="graph"></canvas></div>
-  <div class="proj-body">
-    <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLM</span><span class="proj-tag">Jira API</span><span class="proj-tag">GitHub API</span></div>
-    <div class="proj-name">JiraPilot</div>
-    <div class="proj-desc">Automated workflow converting Jira tickets into boilerplate code using an LLM, triggered by Jira Automation and seeded with real repository context.</div>
-    <div class="proj-links">
-      <a class="proj-link" href="https://github.com/AbhishekSingh1180/JiraPilot" target="_blank">↗ GitHub</a>
+    <div class="proj-card rv">
+      <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="graph"></canvas></div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLM</span><span class="proj-tag">Jira API</span><span class="proj-tag">GitHub API</span></div>
+        <div class="proj-name">JiraPilot</div>
+        <div class="proj-desc">Automated workflow converting Jira tickets into boilerplate code using an LLM, triggered by Jira Automation and seeded with real repository context.</div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/AbhishekSingh1180/JiraPilot" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proj-card rv">
-  <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="bars"></canvas></div>
-  <div class="proj-body">
-    <div class="proj-tags"><span class="proj-tag">Snowflake</span><span class="proj-tag">GCP</span><span class="proj-tag">Airflow</span><span class="proj-tag">GitHub Actions</span></div>
-    <div class="proj-name">Snowflake → BigQuery Migration</div>
-    <div class="proj-desc">GitHub Actions-automated GCP pipeline for Snowflake-to-BigQuery data migration using Cloud Composer, Dataflow, and GCS with full orchestration.</div>
-    <div class="proj-links">
-      <a class="proj-link" href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank">↗ GitHub</a>
+    <div class="proj-card rv">
+      <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="bars"></canvas></div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">Snowflake</span><span class="proj-tag">GCP</span><span class="proj-tag">Airflow</span><span class="proj-tag">GitHub Actions</span></div>
+        <div class="proj-name">Snowflake → BigQuery Migration</div>
+        <div class="proj-desc">GitHub Actions-automated GCP pipeline for Snowflake-to-BigQuery data migration using Cloud Composer, Dataflow, and GCS with full orchestration.</div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/AbhishekSingh1180/snowflake-bigquery-data-migration" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="proj-card rv">
-  <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="dna"></canvas></div>
-  <div class="proj-body">
-    <div class="proj-tags"><span class="proj-tag">Snowflake</span><span class="proj-tag">Apache Airflow</span><span class="proj-tag">Python</span><span class="proj-tag">SQL</span></div>
-    <div class="proj-name">ELT Pipeline – Snowflake & Airflow</div>
-    <div class="proj-desc">End-to-end ELT data pipeline integrating Snowflake and Apache Airflow for automated data ingestion, transformation, and scheduled orchestration.</div>
-    <div class="proj-links">
-      <a class="proj-link" href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank">↗ GitHub</a>
+    <div class="proj-card rv">
+      <div class="proj-canvas-wrap"><canvas class="pcanv" data-t="dna"></canvas></div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag">Snowflake</span><span class="proj-tag">Apache Airflow</span><span class="proj-tag">Python</span><span class="proj-tag">SQL</span></div>
+        <div class="proj-name">ELT Pipeline – Snowflake & Airflow</div>
+        <div class="proj-desc">End-to-end ELT data pipeline integrating Snowflake and Apache Airflow for automated data ingestion, transformation, and scheduled orchestration.</div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/AbhishekSingh1180/sensex-data-analysis" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-```
 
   </div>
 </section>
-
-<!-- CERTS -->
 
 <section id="certs">
   <div class="sec-tag">06 · Certifications</div>
   <h2 class="sec-title rv">Credentials</h2>
   <div class="certs-grid rv">
 
-```
-<div class="cert-card">
-  <div class="cert-issuer">Google Cloud</div>
-  <div class="cert-name">Associate Cloud Engineer</div>
-  <div class="cert-validity">Sep 2023 – Sep 2026</div>
-  <a class="cert-badge active" href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank">✓ Active · View Credential</a>
-</div>
+    <div class="cert-card">
+      <div class="cert-issuer">Google Cloud</div>
+      <div class="cert-name">Associate Cloud Engineer</div>
+      <div class="cert-validity">Sep 2023 – Sep 2026</div>
+      <a class="cert-badge active" href="https://google.accredible.com/0f00628e-2f07-4c5f-b3f5-e6525971ed5c" target="_blank" rel="noopener noreferrer">✓ Active · View Credential</a>
+    </div>
 
-<div class="cert-card">
-  <div class="cert-issuer">Snowflake</div>
-  <div class="cert-name">SnowPro Core Certification</div>
-  <div class="cert-validity">Jun 2023 – Jun 2025</div>
-  <a class="cert-badge expired" href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank">↗ View Credential</a>
-</div>
+    <div class="cert-card">
+      <div class="cert-issuer">Snowflake</div>
+      <div class="cert-name">SnowPro Core Certification</div>
+      <div class="cert-validity">Jun 2023 – Jun 2025</div>
+      <a class="cert-badge expired" href="https://achieve.snowflake.com/704d646d-089a-482a-bcfe-8036db660f30" target="_blank" rel="noopener noreferrer">↗ View Credential</a>
+    </div>
 
-<div class="cert-card">
-  <div class="cert-issuer">HackerRank</div>
-  <div class="cert-name">SQL (Intermediate) Certificate</div>
-  <div class="cert-validity">Verified</div>
-  <a class="cert-badge neutral" href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank">↗ View Certificate</a>
-</div>
-```
+    <div class="cert-card">
+      <div class="cert-issuer">HackerRank</div>
+      <div class="cert-name">SQL (Intermediate) Certificate</div>
+      <div class="cert-validity">Verified</div>
+      <a class="cert-badge neutral" href="https://www.hackerrank.com/certificates/a4b30d1b6cff" target="_blank" rel="noopener noreferrer">↗ View Certificate</a>
+    </div>
 
   </div>
 </section>
-
-<!-- RESUME -->
 
 <section id="resume">
   <div class="sec-tag">07 · Resume</div>
@@ -697,7 +672,7 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   <div class="resume-wrap rv">
     <div class="resume-bar">
       <span class="resume-file">abhishek_singh_data_engineer.pdf</span>
-      <a href="resume.pdf" download class="btn btn-ghost" style="padding:.5rem 1.2rem;font-size:.7rem;">↓ Download</a>
+      <a href="resume.pdf" download class="btn btn-primary" style="padding:.5rem 1.2rem;font-size:.75rem;">↓ Download File</a>
     </div>
     <div class="resume-frame">
       <embed src="resume.pdf" type="application/pdf" width="100%" height="640px"/>
@@ -705,19 +680,17 @@ font-family:‘DM Mono’,monospace;font-size:.68rem;color:var(–muted);
   </div>
 </section>
 
-<!-- CONTACT -->
-
 <section id="contact">
   <div class="contact-glow"></div>
-  <div class="contact-inner">
-    <div class="sec-tag" style="justify-content:center">08 · Contact</div>
+  <div class="contact-card rv">
+    <div class="sec-tag" style="justify-content:center; margin-bottom: 1.5rem;">08 · Contact</div>
     <h2 class="contact-big">Let's build<br/><span class="accent">something real</span></h2>
     <p class="contact-desc">Data Engineer · Research Informatics · Life Sciences Data Platforms<br/>Open to impactful data engineering opportunities worldwide.</p>
     <div class="contact-links">
       <a href="mailto:singh.abhishek.contact@gmail.com" class="btn btn-primary">✉ Email Me</a>
-      <a href="https://linkedin.com/in/abhisheksingh1180" target="_blank" class="btn btn-ghost">↗ LinkedIn</a>
-      <a href="https://github.com/AbhishekSingh1180" target="_blank" class="btn btn-ghost">↗ GitHub</a>
-      <a href="https://leetcode.com/u/V-O-I-D/" target="_blank" class="btn btn-ghost">↗ LeetCode</a>
+      <a href="https://linkedin.com/in/abhisheksingh1180" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">↗ LinkedIn</a>
+      <a href="https://github.com/AbhishekSingh1180" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">↗ GitHub</a>
+      <a href="https://leetcode.com/u/V-O-I-D/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">↗ LeetCode</a>
     </div>
   </div>
 </section>
@@ -775,11 +748,9 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
   for(let i=0;i<100;i++)pts.push(new P());
   function frame(){
     ctx.clearRect(0,0,W,H);
-    // grid
     ctx.strokeStyle='rgba(0,229,255,.03)';ctx.lineWidth=1;
     for(let x=0;x<W;x+=70){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
     for(let y=0;y<H;y+=70){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-    // connections
     for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
       const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
       if(d<110){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
@@ -806,12 +777,10 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
   setInterval(()=>pkts.push({p:0,s:.004+Math.random()*.003}),800);
   (function draw(){
     ctx.clearRect(0,0,W,H);
-    // lines
     for(let i=0;i<nodes.length-1;i++){
       ctx.beginPath();ctx.moveTo(nodes[i].x*W,y);ctx.lineTo(nodes[i+1].x*W,y);
       ctx.strokeStyle='rgba(0,229,255,.12)';ctx.lineWidth=2;ctx.stroke();
     }
-    // packets
     pkts=pkts.filter(p=>p.p<=1);
     pkts.forEach(p=>{
       p.p+=p.s;
@@ -820,7 +789,6 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
       g.addColorStop(0,'rgba(0,229,255,.9)');g.addColorStop(1,'rgba(0,229,255,0)');
       ctx.beginPath();ctx.arc(px,y,6,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
     });
-    // nodes
     nodes.forEach(n=>{
       const nx=n.x*W;
       ctx.beginPath();ctx.arc(nx,y,9,0,Math.PI*2);ctx.fillStyle=n.c;ctx.fill();
@@ -992,7 +960,6 @@ async function fetchGitHub(){
     const user=await userRes.json();
     const repos=await repoRes.json();
 
-    // Profile bar
     const profileEl=document.getElementById('gh-profile');
     profileEl.innerHTML=`
       <div class="gh-profile-bar">
@@ -1008,11 +975,9 @@ async function fetchGitHub(){
         </div>
       </div>`;
 
-    // Repo count in hero
     const rc=document.getElementById('repo-count');
     if(rc)rc.textContent=user.public_repos;
 
-    // Repos
     document.getElementById('repos-loading').style.display='none';
     const grid=document.getElementById('repos-grid');
     repos.filter(r=>!r.fork).forEach((r,i)=>{
@@ -1021,7 +986,7 @@ async function fetchGitHub(){
       const card=document.createElement('div');
       card.className='repo-card';
       card.innerHTML=`
-        <div class="repo-name"><a href="${r.html_url}" target="_blank">${r.name}</a></div>
+        <div class="repo-name"><a href="${r.html_url}" target="_blank" rel="noopener noreferrer">${r.name}</a></div>
         <div class="repo-desc">${r.description||'No description provided.'}</div>
         <div class="repo-meta">
           ${lang?`<div class="repo-lang"><span class="lang-dot" style="background:${color}"></span>${lang}</div>`:''}
@@ -1032,7 +997,7 @@ async function fetchGitHub(){
       setTimeout(()=>card.classList.add('loaded'),i*80);
     });
   }catch(err){
-    document.getElementById('repos-loading').innerHTML=`<span style="color:var(--a3)">Could not load repos — view them at <a href="https://github.com/${GH_USER}" target="_blank" style="color:var(--a1)">github.com/${GH_USER}</a></span>`;
+    document.getElementById('repos-loading').innerHTML=`<span style="color:var(--a3)">Could not load repos — view them at <a href="https://github.com/${GH_USER}" target="_blank" rel="noopener noreferrer" style="color:var(--a1)">github.com/${GH_USER}</a></span>`;
   }
 }
 fetchGitHub();
